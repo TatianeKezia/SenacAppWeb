@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj": {}
+    "C:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj": {}
   },
   "projects": {
-    "c:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj": {
+    "C:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj",
         "projectName": "Biblioteca",
-        "projectPath": "c:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj",
+        "projectPath": "C:\\Users\\tatik\\senac\\Biblioteca\\Biblioteca.csproj",
         "packagesPath": "C:\\Users\\tatik\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\tatik\\senac\\Biblioteca\\obj\\",
+        "outputPath": "C:\\Users\\tatik\\senac\\Biblioteca\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\tatik\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -37,6 +37,8 @@
         "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[3.0.0, )"
             },
