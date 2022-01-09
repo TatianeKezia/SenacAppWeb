@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 
 namespace Biblioteca.Models
@@ -46,7 +47,7 @@ namespace Biblioteca.Models
                             query = bc.Emprestimos.Where(e => e.NomeUsuario.Contains(filtro.Filtro));
                             break;
                         case "Livro":
-                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.Contains(filtro.Filtro));
+                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.ToString().Contains(filtro.Filtro));
                             break;
                         default:
                             query = bc.Emprestimos;
@@ -55,10 +56,10 @@ namespace Biblioteca.Models
                 }
                 else
                 {
-                    return bc.Emprestimos.Include(e => e.Livro).ToList();
+                   query = bc.Emprestimos;
                 }
-                return query.OrderBy(e => e.Livro).ToList();
                 
+                return bc.Emprestimos.Include(e=>e.Livro).OrderBy(e => e.DataDevolucao.ToString()).ToList();
             }
         }
 
