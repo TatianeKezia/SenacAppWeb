@@ -1,4 +1,5 @@
 @model CadEmprestimoViewModel
+
 @{
     ViewData["Title"] = "Cadastro de Emprestimos";
 }
@@ -30,10 +31,12 @@
             <div class="form-group">
                 <label asp-for="Emprestimo.LivroId">Livro</label>
                 <select asp-for="Emprestimo.LivroId" class="form-control">
-                    @foreach(Livro l in Model.Livros)
+
+                   @foreach(Livro l in Model.Livros)
                     {
                         <option value="@l.Id">@l.Titulo</option>
                     }
+                    
                 </select>
             </div>
         </fieldset>
