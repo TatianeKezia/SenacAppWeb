@@ -40,6 +40,8 @@ namespace Biblioteca.Controllers
 
         public IActionResult editarUsuario (int id)
         {
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
             Usuario u = new UsuarioService().Listar (id);
             return View (u);
         }

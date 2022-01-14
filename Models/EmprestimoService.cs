@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using System;
+
 
 
 namespace Biblioteca.Models
@@ -27,8 +27,8 @@ namespace Biblioteca.Models
                 emprestimo.LivroId = e.LivroId;
                 emprestimo.DataEmprestimo = e.DataEmprestimo;
                 emprestimo.DataDevolucao = e.DataDevolucao;
-                emprestimo.Livro.Titulo = e.Livro.Titulo;
-                emprestimo.Livro.Autor = e.Livro.Autor;
+                emprestimo.Devolvido = e.Devolvido;
+                
                 bc.SaveChanges();
             }
         }
@@ -47,7 +47,7 @@ namespace Biblioteca.Models
                             query = bc.Emprestimos.Where(e => e.NomeUsuario.Contains(filtro.Filtro));
                             break;
                         case "Livro":
-                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.ToString().Contains(filtro.Filtro));
+                            query = bc.Emprestimos.Where(e => e.Livro.Titulo.Contains(filtro.Filtro));
                             break;
                         default:
                             query = bc.Emprestimos;
@@ -59,7 +59,7 @@ namespace Biblioteca.Models
                    query = bc.Emprestimos;
                 }
                 
-                return bc.Emprestimos.Include(e=>e.Livro).OrderBy(e => e.DataDevolucao.ToString()).ToList();
+                return bc.Emprestimos.Include(e=>e.Livro).OrderByDescending(e => e.DataDevolucao.ToString()).ToList();
             }
         }
 

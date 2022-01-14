@@ -1,4 +1,5 @@
 @model List<Emprestimo>
+
 @{
     ViewData["Title"] = "Listagem de Empréstimos";
 
@@ -8,6 +9,7 @@
     int NumLivrosPorPag = (Model.Count < FitroPorPag ? Model.Count : FitroPorPag);
     int NumTotalDePag = Model.Count / NumLivrosPorPag + (Model.Count % NumLivrosPorPag == 0 ? 0 : 1);
 
+    string Classe = "";
 }
 
 <div class="row">
@@ -19,9 +21,12 @@
                     <option value="Livro">Livro</option>
                 </select>
             </div>
+
             <div class="form-group mb-2 mx-sm-3">
                 <input type="text" placeholder="Filtro" name="Filtro" class="form-control mb-2" />
             </div>
+
+            <div><button type="submit" class="btn btn-primary mb-2">Pesquisar</button></div>
 
             <div>
                 <select name="itensPagina" id="itensPorPagina" class="form-control mb-2 mx-sm-3">
@@ -34,14 +39,13 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
-
             <div id="SeletorPaginas" class="form-control mb-2 mx-sm-3">
-            <span>Página:</span>
-            @for(int i=1; i<NumTotalDePag; i++){
-                <span><a href="/Livro/Listagem?PaginaAtual=@i">@i, </a></span>
-            }
-        </div>
+                <span>Página:</span>
+                @for (int i = 1; i < NumTotalDePag; i++)
+                {
+                    <span><a href="/Livro/Listagem?PaginaAtual=@i">@i, </a></span>
+                }
+            </div>
 
         </form>
     </div>
@@ -60,21 +64,35 @@
                         <th>Data Devolução</th>
                         <th>Livro</th>
                         <th>Autor</th>
+                        <th>Devolvido</th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @for (int i = (PaginaAtual-1)*NumLivrosPorPag; i<(NumLivrosPorPag*PaginaAtual<Model.Count? NumLivrosPorPag*PaginaAtual: Model.Count);i++)
+                    @for (int i = (PaginaAtual - 1) * NumLivrosPorPag; i < (NumLivrosPorPag * PaginaAtual < Model.Count ?
+                   NumLivrosPorPag * PaginaAtual : Model.Count); i++)
                     {
-                        <tr>
+
+                        <tr class=@Classe>
                             <td>@Model[i].Id</td>
                             <td>@Model[i].NomeUsuario</td>
                             <td>@Model[i].DataEmprestimo.ToString("dd/MM/yyyy")</td>
                             <td>@Model[i].DataDevolucao.ToString("dd/MM/yyyy")</td>
                             <td>@Model[i].Livro.Titulo</td>
                             <td>@Model[i].Livro.Autor</td>
+
+                            @if (Model[i].Devolvido)
+                            {
+                                <td>Sim</td>
+                            }
+                            else
+                            {
+                                <td>Não</td>
+                            }
+
                             <td><a href="/Emprestimo/Edicao/@Model[i].Id">Editar</a></td>
                         </tr>
+
                     }
                 </tbody>
             }

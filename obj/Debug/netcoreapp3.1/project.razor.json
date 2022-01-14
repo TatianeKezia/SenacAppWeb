@@ -14402,8 +14402,8 @@
   "RootNamespace": "Biblioteca",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuarios\\EditarUsuario.cshtml",
-      "TargetPath": "Views\\Usuarios\\EditarUsuario.cshtml",
+      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuario\\ListaDeUsuarios.cshtml",
+      "TargetPath": "Views\\Usuario\\ListaDeUsuarios.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14422,13 +14422,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuarios\\RegistrarUsuario.cshtml",
-      "TargetPath": "Views\\Usuarios\\RegistrarUsuario.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuarios\\NeedAdmin.cshtml",
-      "TargetPath": "Views\\Usuarios\\NeedAdmin.cshtml",
+      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuario\\EditarUsuario.cshtml",
+      "TargetPath": "Views\\Usuario\\EditarUsuario.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14437,13 +14432,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuario\\NeedAdmin.cshtml",
+      "TargetPath": "Views\\Usuario\\NeedAdmin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Emprestimo\\Edicao.cshtml",
       "TargetPath": "Views\\Emprestimo\\Edicao.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuarios\\CadastroRealizado.cshtml",
-      "TargetPath": "Views\\Usuarios\\CadastroRealizado.cshtml",
+      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuario\\ExcluirUsuario.cshtml",
+      "TargetPath": "Views\\Usuario\\ExcluirUsuario.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14462,18 +14462,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuarios\\ListaDeUsuarios.cshtml",
-      "TargetPath": "Views\\Usuarios\\ListaDeUsuarios.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Emprestimo\\Cadastro.cshtml",
       "TargetPath": "Views\\Emprestimo\\Cadastro.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuarios\\ExcluirUsuario.cshtml",
-      "TargetPath": "Views\\Usuarios\\ExcluirUsuario.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14497,8 +14487,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuario\\RegistrarUsuario.cshtml",
+      "TargetPath": "Views\\Usuario\\RegistrarUsuario.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Livro\\Listagem.cshtml",
       "TargetPath": "Views\\Livro\\Listagem.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\tatik\\senac\\Biblioteca\\Views\\Usuario\\CadastroRealizado.cshtml",
+      "TargetPath": "Views\\Usuario\\CadastroRealizado.cshtml",
       "FileKind": "mvc"
     },
     {
