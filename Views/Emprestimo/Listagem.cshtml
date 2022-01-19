@@ -1,15 +1,19 @@
 @model List<Emprestimo>
 
 @{
-    ViewData["Title"] = "Listagem de Empréstimos";
-
+    //recuperar dados da controller
     int FitroPorPag = Int32.Parse(ViewData["livrosPorPagina"].ToString());
     int PaginaAtual = Int32.Parse(ViewData["PaginaAtual"].ToString());
 
     int NumLivrosPorPag = (Model.Count < FitroPorPag ? Model.Count : FitroPorPag);
-    int NumTotalDePag = Model.Count / NumLivrosPorPag + (Model.Count % NumLivrosPorPag == 0 ? 0 : 1);
 
-    string Classe = "";
+    int NumTotalDePag = 0;
+    if (NumLivrosPorPag > 0)
+    {
+        NumTotalDePag = Model.Count / NumLivrosPorPag + (Model.Count % NumLivrosPorPag == 0 ? 0 : 1);
+    }
+
+
 }
 
 <div class="row">
@@ -26,10 +30,8 @@
                 <input type="text" placeholder="Filtro" name="Filtro" class="form-control mb-2" />
             </div>
 
-            <div><button type="submit" class="btn btn-primary mb-2">Pesquisar</button></div>
-
-            <div>
-                <select name="itensPagina" id="itensPorPagina" class="form-control mb-2 mx-sm-3">
+            <div class="form-group mb-2" style="margin-left:15px;">
+                <select name="itensPagina" id="itensPagina" class="form-control">
                     <option value="5">05 itens</option>
                     <option value="10">10 itens</option>
                     <option value="15">15 itens</option>
@@ -39,13 +41,22 @@
                 </select>
             </div>
 
-            <div id="SeletorPaginas" class="form-control mb-2 mx-sm-3">
+
+            <div><button type="submit" class="btn btn-primary mb-2" style="marging-left:25px">Pesquisar</button></div>
+
+
+            <div id="SeletorPaginas" class="form-group mb-2 mx-sm-3" style="margin-left: 25px;">
                 <span>Página:</span>
+
                 @for (int i = 1; i < NumTotalDePag; i++)
                 {
-                    <span><a href="/Livro/Listagem?PaginaAtual=@i">@i, </a></span>
+                    if (i > 1)
+                    {
+                        <span>,</span>
+                    }
 
-                    
+                    <span style="margin-left: 5px;"><a href="/Livro/Listagem?PaginaAtual=?@i">@i</a></span>
+
                 }
             </div>
 
@@ -75,7 +86,7 @@
                    NumLivrosPorPag * PaginaAtual : Model.Count); i++)
                     {
 
-                        <tr class=@Classe>
+                        <tr>
                             <td>@Model[i].Id</td>
                             <td>@Model[i].NomeUsuario</td>
                             <td>@Model[i].DataEmprestimo.ToString("dd/MM/yyyy")</td>
