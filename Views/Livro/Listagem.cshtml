@@ -39,9 +39,11 @@
 
         <div id="SeletorPaginas" class="form-control mb-2 mx-sm-3">
             <span>Página:</span>
-            @for(int i=1; i<NumTotalDePag; i++){
-                <span><a href="/Livro/Listagem?PaginaAtual=@i">@i, </a></span>
-            }
+
+                @for(int i=1; i<NumTotalDePag; i++)
+                {
+                    <span><a href="/Livro/Listagem?PaginaAtual=?@i">@i, </a></span>
+                }
         </div>
     </form>
     </div>

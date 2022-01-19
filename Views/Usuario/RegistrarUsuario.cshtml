@@ -1,9 +1,11 @@
 @model Usuario
-
+@{
+    ViewData["Title"] = "Registrar Usuário";
+}
 <h1>Registre um Usuário</h1>
 
-<form action="RegistrarUsuarios" method="post">
-    <input type="text" name="Nome" id="userNome" placeholder="Nome">
+<form action="RegistrarUsuario" method="post">
+    <input type="text" name="Nome" id="userNome"  placeholder="Nome">
     <input type="text" name="Login" id="userLogin" placeholder="Login">
     <input type="text" name="Senha" id="userSenha" placeholder="Senha">
 

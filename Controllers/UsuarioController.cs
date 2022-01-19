@@ -77,7 +77,7 @@ namespace Biblioteca.Controllers
             }
             
         }
-        //Funções Estras ---
+        //Funções Extras ---
 
         public IActionResult Sair()
         {
@@ -88,7 +88,7 @@ namespace Biblioteca.Controllers
         public IActionResult NeedAdmin()
         {
             Autenticacao.CheckLogin(this);
-            return View();
+            return View("NeedAdmin");
         }
 
     }
